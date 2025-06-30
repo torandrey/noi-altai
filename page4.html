@@ -9,7 +9,6 @@
 
     body {
       font-family: Arial, sans-serif;
-      /* фон из первого кода */
       background: url('https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/%D1%81%D1%80%D0%B0%D0%BD%D0%B8%D0%BA%D0%B0%203.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #000;
@@ -73,9 +72,8 @@
       text-decoration: none;
     }
 
-    /* page-content из первого кода - для контейнера с контентом */
     .page-content {
-      margin-top: 3cm; /* чтобы контент не был под шапкой */
+      margin-top: 3cm;
       max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
@@ -85,16 +83,15 @@
       color: black;
     }
 
-    /* стили второго кода: контейнер с кафе и баней */
     .container {
       display: flex;
-      flex-wrap: nowrap; /* НЕ позволяем переносить на новую строку */
+      flex-wrap: nowrap;
       gap: 20px;
     }
 
     .left, .right {
       flex: 1 1 48%;
-      min-width: 300px; /* минимальная ширина */
+      min-width: 300px;
       background: white;
       border-radius: 10px;
       padding: 20px;
@@ -175,7 +172,6 @@
       margin-bottom: 5px;
     }
 
-    /* адаптив */
     @media (max-width: 768px) {
       .topbar {
         flex-direction: column;
@@ -190,7 +186,7 @@
       }
 
       .container {
-        flex-wrap: wrap; /* разрешаем перенос */
+        flex-wrap: wrap;
         flex-direction: column;
       }
 
@@ -223,9 +219,7 @@
   </div>
 
   <div class="page-content">
-    <!-- вставляем контент из второго кода -->
     <div class="container">
-      <!-- Кафе -->
       <div class="left">
         <h2>Кафе</h2>
         <div class="gallery-container">
@@ -250,9 +244,9 @@
             <h3>Салаты</h3>
             <div class="menu-item"><span>Цезарь с курицей</span><span>250г — 390₽</span></div>
             <div class="menu-section">
-            <h3>Капрезе</h3>
-            <div class="menu-item"><span>Капрезе</span><span>200г — 330₽</span></div>
-          </div>
+              <h3>Капрезе</h3>
+              <div class="menu-item"><span>Капрезе</span><span>200г — 330₽</span></div>
+            </div>
           </div>
           <div class="menu-section">
             <h3>Горячее</h3>
@@ -273,7 +267,6 @@
         <div class="note">Цены ориентировочные и могут меняться в зависимости от сезона!</div>
       </div>
 
-      <!-- Баня -->
       <div class="right">
         <h2>Баня</h2>
         <div class="gallery-container">
@@ -281,4 +274,45 @@
           <div class="gallery">
             <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/10.jpeg" alt="Баня фото 1">
             <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/11.jpg" alt="Баня фото 2">
-            <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/12.jpeg
+            <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/12.jpeg" alt="Баня фото 3">
+            <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/13.jpeg" alt="Баня фото 4">
+          </div>
+          <button class="next">›</button>
+        </div>
+
+        <p>Описание бани, условия, цены и прочее...</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Скрипт для управления галереями
+    document.querySelectorAll('.gallery-container').forEach(container => {
+      const slides = container.querySelectorAll('.gallery img');
+      const prevBtn = container.querySelector('button.prev');
+      const nextBtn = container.querySelector('button.next');
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.style.display = (i === index) ? 'block' : 'none';
+        });
+      }
+
+      // Показываем первый слайд по умолчанию
+      showSlide(currentIndex);
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      });
+
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      });
+    });
+  </script>
+
+</body>
+</html>
