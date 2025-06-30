@@ -97,7 +97,7 @@
       position: relative;
       color: white;
       text-align: center;
-      padding-top: 2.5cm; /* чтобы контент не залезал под фиксированный topbar */
+      padding-top: 2.5cm;
     }
 
     .hero-text {
@@ -145,9 +145,9 @@
       <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/%D0%BB%D0%BE%D0%B3%D0%BE%20111.png" alt="Логотип" class="logo" />
       <div class="menu">
         <a href="#about">О нас</a>
-        <a href="#placement">Размещение</a>
+        <a href="page3.html">Размещение</a>
         <a href="page4.html">Кафе и Баня</a>
-        <a href="#contacts">Контакты</a>
+        <a href="#contacts-anchor">Контакты</a>
         <a href="page5.html">Акции этого сезона</a>
       </div>
     </div>
@@ -164,10 +164,17 @@
     </div>
   </div>
 
-  <!-- Пример будущих блоков -->
-  <div id="about"></div> <!-- 3 блок (галерея или инфо "О нас") -->
-  <div id="placement"></div> <!-- Блок Размещение -->
-  <div id="contacts"></div> <!-- 6 блок - карта -->
+  <!-- Секции сайта -->
+  <div id="about" style="height: 100vh; background: #f5f5f5; padding-top: 2.5cm;">
+    <h2 style="text-align: center;">О нас</h2>
+    <!-- Контент "О нас" -->
+  </div>
+
+  <!-- Блок контактов с якорем выше, чтобы учесть фиксированный topbar -->
+  <div id="contacts-anchor" style="height: 1px;"></div>
+  <div id="contacts" style="height: 100vh; background: #e0e0e0; padding-top: 2.5cm;">
+    <h2 style="text-align: center;">Контакты и карта</h2>
+    <!-- Контент карты и контактов -->
 
   </div>
 
