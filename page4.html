@@ -9,42 +9,68 @@
     body {
       font-family: Arial, sans-serif;
       background: #f8f8f8;
-      padding-top: 100px;
+      padding: 20px;
     }
 
     .container {
       display: flex;
-      flex-wrap: wrap;
-      max-width: 1200px;
-      margin: 0 auto;
       gap: 20px;
-      padding: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+      flex-wrap: wrap;
     }
 
     .section {
-      flex: 1 1 45%;
+      flex: 1 1 48%;
       background: white;
       border-radius: 10px;
       padding: 20px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .gallery {
       display: flex;
-      overflow-x: auto;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .gallery img {
-      height: 150px;
-      border-radius: 10px;
+      flex-direction: column;
+      position: relative;
     }
 
     h2 {
-      margin-bottom: 15px;
       text-align: center;
+      margin-bottom: 20px;
     }
+
+    .slider-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 220px;
+      margin-bottom: 20px;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.4s ease;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border-radius: 10px;
+    }
+
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
 
     .menu-section {
       margin-bottom: 20px;
@@ -70,9 +96,22 @@
       margin-top: 10px;
     }
 
-    @media (max-width: 768px) {
+    .bania-text p {
+      margin-bottom: 15px;
+    }
+
+    .bania-text ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    @media (max-width: 900px) {
       .container {
         flex-direction: column;
+      }
+
+      .section {
+        flex: 1 1 100%;
       }
     }
   </style>
@@ -80,19 +119,20 @@
 <body>
 
 <div class="container">
+
   <!-- Кафе -->
   <div class="section">
     <h2>Кафе</h2>
-    <div class="gallery">
-      <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/images/1.jpg">
-      <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/images/2.jpg">
-      <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/images/3.jpg">
-      <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/images/4.jpg">
-      <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/images/5.jpeg">
-      <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/images/6.jpg">
-      <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/images/7.jpg">
-      <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/images/8.jpg">
-      <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/images/9.jpg">
+    <div class="slider-wrapper">
+      <div class="slider" id="cafeSlider">
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/1.jpg" />
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/2.jpg" />
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/3.jpg" />
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/4.jpg" />
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/5.jpeg" />
+      </div>
+      <button class="nav-btn prev" onclick="prevSlide('cafeSlider')">&#10094;</button>
+      <button class="nav-btn next" onclick="nextSlide('cafeSlider')">&#10095;</button>
     </div>
 
     <div class="menu">
@@ -105,30 +145,11 @@
         <h3>Салаты</h3>
         <div class="menu-item"><span>Цезарь с курицей</span><span>250г — 390₽</span></div>
         <div class="menu-item"><span>Капрезе</span><span>200г — 330₽</span></div>
-        <div class="menu-item"><span>Оливье</span><span>250г — 300₽</span></div>
-      </div>
-      <div class="menu-section">
-        <h3>Горячее</h3>
-        <div class="menu-item"><span>Язык на гриле</span><span>200г — 490₽</span></div>
-        <div class="menu-item"><span>Овощи на гриле</span><span>200г — 280₽</span></div>
-        <div class="menu-item"><span>Курица в сливках</span><span>300г — 420₽</span></div>
-      </div>
-      <div class="menu-section">
-        <h3>Закуски</h3>
-        <div class="menu-item"><span>Сырная тарелка</span><span>200г — 450₽</span></div>
-        <div class="menu-item"><span>Брускетта с лососем</span><span>150г — 370₽</span></div>
       </div>
       <div class="menu-section">
         <h3>Шашлыки</h3>
         <div class="menu-item"><span>Свинина</span><span>250г — 480₽</span></div>
-        <div class="menu-item"><span>Курица</span><span>250г — 430₽</span></div>
         <div class="menu-item"><span>Овощной шашлык</span><span>200г — 320₽</span></div>
-      </div>
-      <div class="menu-section">
-        <h3>Напитки</h3>
-        <div class="menu-item"><span>Морс</span><span>200мл — 100₽</span></div>
-        <div class="menu-item"><span>Компот</span><span>200мл — 80₽</span></div>
-        <div class="menu-item"><span>Чай/Кофе</span><span>250мл — 150₽</span></div>
       </div>
     </div>
     <div class="note">Цены ориентировочные и могут различаться в зависимости от сезона!</div>
@@ -137,22 +158,42 @@
   <!-- Баня -->
   <div class="section">
     <h2>Баня</h2>
-    <div class="gallery">
-      <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/images/10.jpeg">
-      <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/images/11.jpg">
-      <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/images/12.jpeg">
-      <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/images/13.jpg">
+    <div class="slider-wrapper">
+      <div class="slider" id="baniaSlider">
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/10.jpeg" />
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/11.jpg" />
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/12.jpeg" />
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/13.jpg" />
+      </div>
+      <button class="nav-btn prev" onclick="prevSlide('baniaSlider')">&#10094;</button>
+      <button class="nav-btn next" onclick="nextSlide('baniaSlider')">&#10095;</button>
     </div>
-    <p>
-      Просторная баня с бассейном — лучшее место для отдыха душой и телом! Жаркая парилка, душистые веники, уютная зона отдыха, душ, купель. Отлично подходит для компании до 10 человек. Можно арендовать на вечер или просто на час — всё гибко.
-    </p>
-    <ul>
-      <li>1 час — <strong>1000₽</strong></li>
-      <li>Веник — <strong>200₽</strong></li>
-      <li>До 10 человек включено</li>
-    </ul>
+
+    <div class="bania-text">
+      <p>Просторная баня с бассейном — лучшее место для отдыха душой и телом! Жаркая парилка, душистые веники, уютная зона отдыха, душ, купель. Отлично подходит для компании до 10 человек. Можно арендовать на вечер или просто на час — всё гибко.</p>
+      <ul>
+        <li>1 час — <strong>1000₽</strong></li>
+        <li>Веник — <strong>200₽</strong></li>
+        <li>Полотенце + шапка — <strong>150₽</strong></li>
+        <li>До 10 человек включено</li>
+      </ul>
+    </div>
   </div>
 </div>
+
+<script>
+  function nextSlide(id) {
+    const slider = document.getElementById(id);
+    const imgWidth = slider.querySelector('img').clientWidth;
+    slider.scrollBy({ left: imgWidth, behavior: 'smooth' });
+  }
+
+  function prevSlide(id) {
+    const slider = document.getElementById(id);
+    const imgWidth = slider.querySelector('img').clientWidth;
+    slider.scrollBy({ left: -imgWidth, behavior: 'smooth' });
+  }
+</script>
 
 </body>
 </html>
