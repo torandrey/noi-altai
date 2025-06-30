@@ -11,13 +11,13 @@
   <meta property="og:description" content="Комфортный отдых на Алтае: коттеджи, домики, баня, туры и бассейн. Село Элекмонар, Республика Алтай." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://torandrey.github.io/noi-altai/" />
-  <meta property="og:image" content="https://raw.githubusercontent.com/torandrey/noi-altai/main/logo 111.jpg" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/torandrey/noi-altai/main/logo%20111.jpg" />
 
-  <!-- Twitter Card (опционально) -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content='База отдыха "Ной" — Алтай, Элекмонар' />
   <meta name="twitter:description" content="Отдых в горах Алтая — комфорт, природа, туры и баня. База отдыха Ной, с. Элекмонар." />
-  <meta name="twitter:image" content="https://raw.githubusercontent.com/torandrey/noi-altai/main/logo 111.jpg" />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/torandrey/noi-altai/main/logo%20111.jpg" />
 
   <style>
     * {
@@ -25,21 +25,14 @@
       padding: 0;
       box-sizing: border-box;
     }
-    body, html {
+    html, body {
       font-family: Arial, sans-serif;
       background-color: #fff;
       color: #000;
     }
-    .hero {
-      background: url('https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/111.jpg') no-repeat center center;
-      background-size: cover;
-      height: 100vh;
-      position: relative;
-      color: white;
-      text-align: center;
-    }
+
     .topbar {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -49,16 +42,20 @@
       align-items: center;
       padding: 0 20px;
       justify-content: space-between;
-      z-index: 10;
+      z-index: 999;
+      backdrop-filter: blur(5px);
     }
+
     .logo-menu {
       display: flex;
       align-items: center;
       gap: 30px;
     }
+
     .logo {
       height: 45px;
     }
+
     .menu a {
       color: white;
       text-decoration: none;
@@ -66,19 +63,23 @@
       margin-right: 20px;
       transition: 0.3s;
     }
+
     .menu a:hover {
       text-decoration: underline;
     }
+
     .contact {
       display: flex;
       align-items: center;
       gap: 10px;
     }
+
     .telegram {
       color: #1DA1F2;
       font-weight: bold;
       text-decoration: none;
     }
+
     .phone-button {
       background: white;
       color: black;
@@ -87,65 +88,33 @@
       font-weight: bold;
       text-decoration: none;
     }
+
+    .hero {
+      background: url('https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/111.jpg') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      position: relative;
+      color: white;
+      text-align: center;
+      padding-top: 2.5cm; /* чтобы контент не залезал под фиксированный topbar */
+    }
+
     .hero-text {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
+
     .hero-text h1 {
       font-size: 36px;
       margin-bottom: 20px;
     }
+
     .hero-text p {
       font-size: 20px;
       max-width: 600px;
       margin: 0 auto;
-    }
-
-    /* Второй блок */
-    .section {
-      width: 100%;
-      padding: 60px 20px;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .columns {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .column {
-      flex: 1 1 220px;
-      min-width: 220px;
-      color: #000;
-    }
-
-    .column h3 {
-      font-size: 22px;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      color: #000;
-    }
-
-    .line {
-      width: 50px;
-      height: 8px; /* Увеличено в 4 раза */
-      background-color: #000;
-      margin-bottom: 15px;
-    }
-
-    .column p {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #000;
     }
 
     @media (max-width: 768px) {
@@ -165,31 +134,29 @@
       .hero-text p {
         font-size: 16px;
       }
-      .columns {
-        flex-direction: column;
-        gap: 20px;
-      }
     }
   </style>
 </head>
+
 <body>
-  <div class="hero">
-    <div class="topbar">
-      <div class="logo-menu">
-        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/%D0%BB%D0%BE%D0%B3%D0%BE%20111.png" alt="Логотип" class="logo" />
-        <div class="menu">
-          <a href="#about">О нас</a>
-          <a href="#territory">Территория</a>
-          <a href="#services">Кафе и Баня</a>
-          <a href="#contacts">Контакты</a>
-          <a href="#map">Карта</a>
-        </div>
-      </div>
-      <div class="contact">
-        <a href="https://t.me/Torandrey" class="telegram">Telegram</a>
-        <a href="tel:+79612360081" class="phone-button">+7 961 236 00 81</a>
+  <div class="topbar">
+    <div class="logo-menu">
+      <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/%D0%BB%D0%BE%D0%B3%D0%BE%20111.png" alt="Логотип" class="logo" />
+      <div class="menu">
+        <a href="#about">О нас</a>
+        <a href="#territory">Территория</a>
+        <a href="#services">Кафе и Баня</a>
+        <a href="#contacts">Контакты</a>
+        <a href="#map">Карта</a>
       </div>
     </div>
+    <div class="contact">
+      <a href="https://t.me/Torandrey" class="telegram">TELEGRAM</a>
+      <a href="tel:+79612360081" class="phone-button">+7 961 236 00 81</a>
+    </div>
+  </div>
+
+  <div class="hero">
     <div class="hero-text">
       <h1>Место, где начинается счастье</h1>
       <p>Бассейн. Баня. Кафе.<br>Здесь вы отдохнете от городской суеты и зарядитесь энергией</p>
