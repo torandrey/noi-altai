@@ -13,6 +13,8 @@
     body, html {
       height: 100%;
       font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
     }
     .hero {
       background: url('https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/111.jpg') no-repeat center center;
@@ -33,6 +35,7 @@
       align-items: center;
       padding: 0 20px;
       justify-content: space-between;
+      z-index: 10;
     }
     .logo-menu {
       display: flex;
@@ -85,6 +88,55 @@
       max-width: 600px;
       margin: 0 auto;
     }
+
+    /* Второй блок */
+    .section {
+      width: 100%;
+      padding: 60px 20px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 40px 20px;
+      border-radius: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .column {
+      flex: 1 1 220px;
+      min-width: 220px;
+    }
+
+    .column h3 {
+      font-size: 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .line {
+      width: 50px;
+      height: 2px;
+      background-color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .column p {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
     @media (max-width: 768px) {
       .topbar {
         flex-direction: column;
@@ -94,12 +146,17 @@
       }
       .logo-menu, .contact {
         flex-direction: column;
+        align-items: center;
       }
       .hero-text h1 {
         font-size: 24px;
       }
       .hero-text p {
         font-size: 16px;
+      }
+      .columns {
+        flex-direction: column;
+        gap: 20px;
       }
     }
   </style>
@@ -127,5 +184,46 @@
       <p>Бассейн. Баня. Кафе.<br>Здесь вы отдохнете от городской суеты и зарядитесь энергией</p>
     </div>
   </div>
+
+  <!-- Второй блок -->
+  <section class="section" style="background-image: url('https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/222.png');">
+    <div class="overlay">
+      <div class="columns">
+        <div class="column">
+          <h3>2 БАССЕЙНА</h3>
+          <div class="line"></div>
+          <p>На територии базы отдыха имеются 2 бассейна<br>
+            1 взрослый — глубина 1.7 м, ширина 4 м, длина 10 м.<br>
+            1 детский — круглый, диаметр 3 м, с подогревом.<br>
+            Вода всегда чистая и тёплая.</p>
+        </div>
+        <div class="column">
+          <h3>КАФЕ СВОЯ КУХНЯ</h3>
+          <div class="line"></div>
+          <p>Место, где вкус сочетается с уютом, а природа становится частью гастрономического удовольствия!<br>
+            Мангал — наш секрет создания ароматных блюд.<br>
+            Всё готовится с душой и любовью.</p>
+        </div>
+        <div class="column">
+          <h3>ПРОКАТ КВАДРОЦИКЛОВ</h3>
+          <div class="line"></div>
+          <p>Нереальные эмоции,<br>
+            Продуманный маршрут,<br>
+            10+ единиц техники в аренду.<br><br>
+            "Взрывная суббота" и "Семейное воскресенье"<br>
+            Супер активный отдых!<br>
+            Стоимость: 1000 руб/чел.</p>
+        </div>
+        <div class="column">
+          <h3>БАНИ МНОГО НЕ БЫВАЕТ</h3>
+          <div class="line"></div>
+          <p>Спецпредложение: арендуете баню на 3 часа — 4-й в подарок!<br>
+            За 4 часа — 2 часа в подарок!<br>
+            Действует для любой компании.<br>
+            Подробности в TG, WhatsApp или по тел. +7 961 236 00 81</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
