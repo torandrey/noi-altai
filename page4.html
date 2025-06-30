@@ -15,12 +15,13 @@
 
     .container {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap; /* НЕ позволяем переносить на новую строку */
       gap: 20px;
     }
 
     .left, .right {
       flex: 1 1 48%;
+      min-width: 300px; /* минимальная ширина, чтобы не сжималось слишком */
       background: white;
       border-radius: 10px;
       padding: 20px;
@@ -102,6 +103,7 @@
 
     @media (max-width: 768px) {
       .container {
+        flex-wrap: wrap; /* разрешаем перенос */
         flex-direction: column;
       }
     }
@@ -116,11 +118,11 @@
     <div class="gallery-container">
       <button class="prev">‹</button>
       <div class="gallery">
-        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/1.jpg">
-        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/2.jpg">
-        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/3.jpg">
-        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/4.jpg">
-        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/5.jpeg">
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/1.jpg" alt="Кафе фото 1">
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/2.jpg" alt="Кафе фото 2">
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/3.jpg" alt="Кафе фото 3">
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/4.jpg" alt="Кафе фото 4">
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/5.jpeg" alt="Кафе фото 5">
       </div>
       <button class="next">›</button>
     </div>
@@ -161,10 +163,10 @@
     <div class="gallery-container">
       <button class="prev">‹</button>
       <div class="gallery">
-        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/10.jpeg">
-        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/11.jpg">
-        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/12.jpeg">
-        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/13.jpg">
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/10.jpeg" alt="Баня фото 1">
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/11.jpg" alt="Баня фото 2">
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/12.jpeg" alt="Баня фото 3">
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/main/images/13.jpg" alt="Баня фото 4">
       </div>
       <button class="next">›</button>
     </div>
