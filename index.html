@@ -25,7 +25,10 @@
       padding: 0;
       box-sizing: border-box;
     }
-    html, body {
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
       font-family: Arial, sans-serif;
       background-color: #fff;
       color: #000;
@@ -96,7 +99,7 @@
       position: relative;
       color: white;
       text-align: center;
-      padding-top: 2.5cm; /* чтобы контент не залезал под фиксированный topbar */
+      padding-top: 2.5cm;
     }
 
     .hero-text {
@@ -145,9 +148,9 @@
       <div class="menu">
         <a href="#about">О нас</a>
         <a href="#territory">Территория</a>
-        <a href="#services">Кафе и Баня</a>
-        <a href="#contacts">Контакты</a>
-        <a href="#map">Карта</a>
+        <a href="page4.html">Кафе и Баня</a>
+        <a href="#bottom">Контакты</a>
+        <a href="page5.html">Акции этого сезона</a>
       </div>
     </div>
     <div class="contact">
@@ -161,6 +164,10 @@
       <h1>Место, где начинается счастье</h1>
       <p>Бассейн. Баня. Кафе.<br>Здесь вы отдохнете от городской суеты и зарядитесь энергией</p>
     </div>
+  </div>
+
+  <!-- 🔽 В самом низу страницы не забудь добавить: -->
+  <div id="bottom"></div>
   </div>
 
   <!-- Второй блок -->
