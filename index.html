@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>База отдыха Ной — Алтай</title>
   <style>
     * {
@@ -11,10 +11,9 @@
       box-sizing: border-box;
     }
     body, html {
-      height: 100%;
       font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #fff;
+      background-color: #fff;
+      color: #000;
     }
     .hero {
       background: url('https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/111.jpg') no-repeat center center;
@@ -98,15 +97,9 @@
       background-repeat: no-repeat;
     }
 
-    .overlay {
-      background: rgba(0, 0, 0, 0.5);
-      padding: 40px 20px;
-      border-radius: 20px;
+    .columns {
       max-width: 1200px;
       margin: auto;
-    }
-
-    .columns {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -116,25 +109,28 @@
     .column {
       flex: 1 1 220px;
       min-width: 220px;
+      color: #000;
     }
 
     .column h3 {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: bold;
       text-transform: uppercase;
       margin-bottom: 10px;
+      color: #000;
     }
 
     .line {
       width: 50px;
-      height: 2px;
-      background-color: #fff;
-      margin-bottom: 10px;
+      height: 8px; /* Увеличено в 4 раза */
+      background-color: #000;
+      margin-bottom: 15px;
     }
 
     .column p {
-      font-size: 16px;
-      line-height: 1.4;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #000;
     }
 
     @media (max-width: 768px) {
@@ -165,7 +161,7 @@
   <div class="hero">
     <div class="topbar">
       <div class="logo-menu">
-        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/%D0%BB%D0%BE%D0%B3%D0%BE%20111.png" alt="Логотип" class="logo">
+        <img src="https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/%D0%BB%D0%BE%D0%B3%D0%BE%20111.png" alt="Логотип" class="logo" />
         <div class="menu">
           <a href="#about">О нас</a>
           <a href="#territory">Территория</a>
@@ -187,41 +183,39 @@
 
   <!-- Второй блок -->
   <section class="section" style="background-image: url('https://raw.githubusercontent.com/torandrey/noi-altai/refs/heads/main/222.png');">
-    <div class="overlay">
-      <div class="columns">
-        <div class="column">
-          <h3>2 БАССЕЙНА</h3>
-          <div class="line"></div>
-          <p>На територии базы отдыха имеются 2 бассейна<br>
-            1 взрослый — глубина 1.7 м, ширина 4 м, длина 10 м.<br>
-            1 детский — круглый, диаметр 3 м, с подогревом.<br>
-            Вода всегда чистая и тёплая.</p>
-        </div>
-        <div class="column">
-          <h3>КАФЕ СВОЯ КУХНЯ</h3>
-          <div class="line"></div>
-          <p>Место, где вкус сочетается с уютом, а природа становится частью гастрономического удовольствия!<br>
-            Мангал — наш секрет создания ароматных блюд.<br>
-            Всё готовится с душой и любовью.</p>
-        </div>
-        <div class="column">
-          <h3>ПРОКАТ КВАДРОЦИКЛОВ</h3>
-          <div class="line"></div>
-          <p>Нереальные эмоции,<br>
-            Продуманный маршрут,<br>
-            10+ единиц техники в аренду.<br><br>
-            "Взрывная суббота" и "Семейное воскресенье"<br>
-            Супер активный отдых!<br>
-            Стоимость: 1000 руб/чел.</p>
-        </div>
-        <div class="column">
-          <h3>БАНИ МНОГО НЕ БЫВАЕТ</h3>
-          <div class="line"></div>
-          <p>Спецпредложение: арендуете баню на 3 часа — 4-й в подарок!<br>
-            За 4 часа — 2 часа в подарок!<br>
-            Действует для любой компании.<br>
-            Подробности в TG, WhatsApp или по тел. +7 961 236 00 81</p>
-        </div>
+    <div class="columns">
+      <div class="column">
+        <h3>2 БАССЕЙНА</h3>
+        <div class="line"></div>
+        <p>На територии базы отдыха имеются 2 бассейна<br>
+          1 взрослый — глубина 1.7 м, ширина 4 м, длина 10 м.<br>
+          1 детский — круглый, диаметр 3 м, с подогревом.<br>
+          Вода всегда чистая и тёплая.</p>
+      </div>
+      <div class="column">
+        <h3>КАФЕ СВОЯ КУХНЯ</h3>
+        <div class="line"></div>
+        <p>Место, где вкус сочетается с уютом, а природа становится частью гастрономического удовольствия!<br>
+          Мангал — наш секрет создания ароматных блюд.<br>
+          Всё готовится с душой и любовью.</p>
+      </div>
+      <div class="column">
+        <h3>ПРОКАТ КВАДРОЦИКЛОВ</h3>
+        <div class="line"></div>
+        <p>Нереальные эмоции,<br>
+          Продуманный маршрут,<br>
+          10+ единиц техники в аренду.<br><br>
+          "Взрывная суббота" и "Семейное воскресенье"<br>
+          Супер активный отдых!<br>
+          Стоимость: 1000 руб/чел.</p>
+      </div>
+      <div class="column">
+        <h3>БАНИ МНОГО НЕ БЫВАЕТ</h3>
+        <div class="line"></div>
+        <p>Спецпредложение: арендуете баню на 3 часа — 4-й в подарок!<br>
+          За 4 часа — 2 часа в подарок!<br>
+          Действует для любой компании.<br>
+          Подробности в TG, WhatsApp или по тел. +7 961 236 00 81</p>
       </div>
     </div>
   </section>
